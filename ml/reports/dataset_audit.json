@@ -1,0 +1,77 @@
+{
+  "source": "Mendeley Data mhjyrn35p4 v2: original_data only (provided augmented_data excluded to prevent leakage)",
+  "licence": "CC BY 4.0",
+  "n_images": 323,
+  "class_counts": {
+    "benign": 165,
+    "malignant": 158
+  },
+  "formats": {
+    "JPEG": 323
+  },
+  "width": {
+    "min": 93,
+    "median": 518,
+    "max": 9248
+  },
+  "height": {
+    "min": 96,
+    "median": 535,
+    "max": 6936
+  },
+  "patient_ids_available": false,
+  "exact_duplicate_pairs": 0,
+  "near_duplicate_pairs": 2,
+  "near_duplicate_hamming_threshold": 6,
+  "cross_label_duplicate_pairs": [],
+  "n_groups": 321,
+  "group_size_histogram": {
+    "1": 319,
+    "2": 2
+  },
+  "split_counts": {
+    "dev": {
+      "benign": 132,
+      "malignant": 126
+    },
+    "test": {
+      "benign": 33,
+      "malignant": 32
+    }
+  },
+  "fold_counts": {
+    "0": {
+      "benign": 26,
+      "malignant": 26
+    },
+    "1": {
+      "benign": 27,
+      "malignant": 25
+    },
+    "2": {
+      "benign": 26,
+      "malignant": 25
+    },
+    "3": {
+      "benign": 27,
+      "malignant": 25
+    },
+    "4": {
+      "benign": 26,
+      "malignant": 25
+    }
+  },
+  "group_leakage_across_splits": false,
+  "duplicate_pairs": [
+    [
+      "benign/102.jpg",
+      "benign/83.jpg",
+      6
+    ],
+    [
+      "malignant/125.jpg",
+      "malignant/91.jpg",
+      6
+    ]
+  ]
+}

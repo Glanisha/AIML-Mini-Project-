@@ -1,0 +1,13 @@
+# Render Blueprint (alternative free host: 512 MB RAM, sleeps after 15 min idle).
+# Hugging Face Spaces is recommended: 16 GB RAM and a much longer idle timeout on the free CPU tier.
+services:
+  - type: web
+    name: oralsight-api
+    runtime: docker
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: ORT_THREADS
+        value: "1"

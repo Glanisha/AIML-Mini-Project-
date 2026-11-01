@@ -4,19 +4,24 @@ __pycache__/
 .venv/
 venv/
 .env
+.pytest_cache/
 
 # Node
 node_modules/
 dist/
 
-# ML artefacts (share weights/datasets outside git unless small)
+# ML: raw/external datasets, checkpoints and intermediate artefacts stay local
 ml/data/*
 !ml/data/.gitkeep
+ml/artifacts/
 ml/models/*
 !ml/models/.gitkeep
 *.pt
 *.pth
+
+# The deployable ONNX bundle IS committed so the backend can be built anywhere
 *.onnx
+!backend/app/model_bundle/*.onnx
 
 # Editors / OS
 .vscode/

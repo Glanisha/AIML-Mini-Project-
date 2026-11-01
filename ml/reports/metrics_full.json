@@ -1,0 +1,1634 @@
+{
+  "model_version": "efficientnet_b0-ens5-v1.0.0",
+  "architecture": "efficientnet_b0",
+  "dataset": {
+    "citation": "Chandrashekar H S, Geetha Kiran A, Murali S, Dinesh M S, Nanditha B R (2021). Oral Images Dataset, Mendeley Data, V2. doi:10.17632/mhjyrn35p4.2. Licensed CC BY 4.0.",
+    "audit": {
+      "n_images": 323,
+      "class_counts": {
+        "benign": 165,
+        "malignant": 158
+      },
+      "patient_ids_available": false,
+      "exact_duplicate_pairs": 0,
+      "near_duplicate_pairs": 2,
+      "n_groups": 321,
+      "split_counts": {
+        "dev": {
+          "benign": 132,
+          "malignant": 126
+        },
+        "test": {
+          "benign": 33,
+          "malignant": 32
+        }
+      },
+      "group_leakage_across_splits": false
+    }
+  },
+  "test_size": 65,
+  "test_class_counts": {
+    "benign": 33,
+    "malignant": 32
+  },
+  "operating_threshold": 0.2757353186607361,
+  "decision_config": {
+    "operating_threshold": 0.2757353186607361,
+    "target_sensitivity": 0.9,
+    "abstain_margin": 0.11401157081127167,
+    "min_member_agreement": 0.6
+  },
+  "temperature": 1.2493771811185386,
+  "headline": {
+    "roc_auc": {
+      "value": 0.9393939393939394,
+      "ci95": [
+        0.8749763257575758,
+        0.990530303030303
+      ]
+    },
+    "pr_auc": {
+      "value": 0.9325325106465052,
+      "ci95": [
+        0.8642529442023525,
+        0.9895833333333333
+      ]
+    },
+    "sensitivity": {
+      "value": 0.9375,
+      "ci95": [
+        0.84375,
+        1.0
+      ]
+    },
+    "specificity": {
+      "value": 0.7878787878787878,
+      "ci95": [
+        0.6363636363636364,
+        0.9090909090909091
+      ]
+    },
+    "ppv": {
+      "value": 0.8108108108108109,
+      "ci95": [
+        0.7142857142857143,
+        0.9117647058823529
+      ]
+    },
+    "npv": {
+      "value": 0.9285714285714286,
+      "ci95": [
+        0.8333333333333334,
+        1.0
+      ]
+    },
+    "accuracy": {
+      "value": 0.8615384615384616,
+      "ci95": [
+        0.7692307692307693,
+        0.9384615384615385
+      ]
+    },
+    "balanced_accuracy": {
+      "value": 0.8626893939393939,
+      "ci95": [
+        0.771780303030303,
+        0.9389204545454546
+      ]
+    },
+    "f1": {
+      "value": 0.8695652173913043,
+      "ci95": [
+        0.7941176470588235,
+        0.9411764705882353
+      ]
+    },
+    "confusion": {
+      "tp": 30,
+      "tn": 26,
+      "fp": 7,
+      "fn": 2
+    }
+  },
+  "at_threshold_0_5": {
+    "tp": 24,
+    "tn": 30,
+    "fp": 3,
+    "fn": 8,
+    "sensitivity": 0.75,
+    "specificity": 0.9090909090909091,
+    "ppv": 0.8888888888888888,
+    "npv": 0.7894736842105263,
+    "accuracy": 0.8307692307692308,
+    "balanced_accuracy": 0.8295454545454546,
+    "f1": 0.8135593220338984
+  },
+  "selective": {
+    "coverage": 0.8153846153846154,
+    "abstained": 12,
+    "tp": 25,
+    "tn": 24,
+    "fp": 3,
+    "fn": 1,
+    "sensitivity": 0.9615384615384616,
+    "specificity": 0.8888888888888888,
+    "ppv": 0.8928571428571429,
+    "npv": 0.96,
+    "accuracy": 0.9245283018867925,
+    "balanced_accuracy": 0.9252136752136753,
+    "f1": 0.9259259259259259
+  },
+  "abstain_reason_counts": {
+    "The model's score is too close to its decision threshold.": 12,
+    "The ensemble models disagree with each other.": 4
+  },
+  "calibration": {
+    "ece_before": 0.1551768498351941,
+    "ece_after": 0.13240307692307693,
+    "brier_before": 0.1181788370013237,
+    "brier_after": 0.11764315630769233,
+    "reliability_before": [
+      {
+        "bin_low": 0.0,
+        "bin_high": 0.1,
+        "mean_predicted": 0.03727634623646736,
+        "observed_rate": 0.043478260869565216,
+        "count": 23
+      },
+      {
+        "bin_low": 0.1,
+        "bin_high": 0.2,
+        "mean_predicted": 0.1447775512933731,
+        "observed_rate": 0.25,
+        "count": 4
+      },
+      {
+        "bin_low": 0.2,
+        "bin_high": 0.30000000000000004,
+        "mean_predicted": 0.25003936886787415,
+        "observed_rate": 0.0,
+        "count": 5
+      },
+      {
+        "bin_low": 0.30000000000000004,
+        "bin_high": 0.4,
+        "mean_predicted": 0.33353668451309204,
+        "observed_rate": 1.0,
+        "count": 5
+      },
+      {
+        "bin_low": 0.4,
+        "bin_high": 0.5,
+        "mean_predicted": 0.40630507469177246,
+        "observed_rate": 1.0,
+        "count": 1
+      },
+      {
+        "bin_low": 0.5,
+        "bin_high": 0.6000000000000001,
+        "mean_predicted": 0.5489899516105652,
+        "observed_rate": 0.75,
+        "count": 4
+      },
+      {
+        "bin_low": 0.6000000000000001,
+        "bin_high": 0.7000000000000001,
+        "mean_predicted": 0.6621092557907104,
+        "observed_rate": 1.0,
+        "count": 4
+      },
+      {
+        "bin_low": 0.7000000000000001,
+        "bin_high": 0.8,
+        "mean_predicted": 0.7114851474761963,
+        "observed_rate": 1.0,
+        "count": 2
+      },
+      {
+        "bin_low": 0.8,
+        "bin_high": 0.9,
+        "mean_predicted": 0.8581864237785339,
+        "observed_rate": 0.7142857142857143,
+        "count": 7
+      },
+      {
+        "bin_low": 0.9,
+        "bin_high": 1.0,
+        "mean_predicted": 0.9393184781074524,
+        "observed_rate": 1.0,
+        "count": 10
+      }
+    ],
+    "reliability_after": [
+      {
+        "bin_low": 0.0,
+        "bin_high": 0.1,
+        "mean_predicted": 0.054847619047619055,
+        "observed_rate": 0.047619047619047616,
+        "count": 21
+      },
+      {
+        "bin_low": 0.1,
+        "bin_high": 0.2,
+        "mean_predicted": 0.135125,
+        "observed_rate": 0.0,
+        "count": 4
+      },
+      {
+        "bin_low": 0.2,
+        "bin_high": 0.30000000000000004,
+        "mean_predicted": 0.2587666666666667,
+        "observed_rate": 0.16666666666666666,
+        "count": 6
+      },
+      {
+        "bin_low": 0.30000000000000004,
+        "bin_high": 0.4,
+        "mean_predicted": 0.3491666666666667,
+        "observed_rate": 0.8333333333333334,
+        "count": 6
+      },
+      {
+        "bin_low": 0.4,
+        "bin_high": 0.5,
+        "mean_predicted": 0.4235,
+        "observed_rate": 1.0,
+        "count": 1
+      },
+      {
+        "bin_low": 0.5,
+        "bin_high": 0.6000000000000001,
+        "mean_predicted": 0.540325,
+        "observed_rate": 0.75,
+        "count": 4
+      },
+      {
+        "bin_low": 0.6000000000000001,
+        "bin_high": 0.7000000000000001,
+        "mean_predicted": 0.6519666666666667,
+        "observed_rate": 1.0,
+        "count": 6
+      },
+      {
+        "bin_low": 0.7000000000000001,
+        "bin_high": 0.8,
+        "mean_predicted": 0.7814333333333333,
+        "observed_rate": 0.6666666666666666,
+        "count": 3
+      },
+      {
+        "bin_low": 0.8,
+        "bin_high": 0.9,
+        "mean_predicted": 0.8683428571428571,
+        "observed_rate": 0.8571428571428571,
+        "count": 7
+      },
+      {
+        "bin_low": 0.9,
+        "bin_high": 1.0,
+        "mean_predicted": 0.9242571428571429,
+        "observed_rate": 1.0,
+        "count": 7
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "name": "Baseline: frozen ImageNet embeddings + logistic regression",
+      "key": "baseline",
+      "roc_auc": 0.9251893939393939,
+      "tp": 25,
+      "tn": 29,
+      "fp": 4,
+      "fn": 7,
+      "sensitivity": 0.78125,
+      "specificity": 0.8787878787878788,
+      "ppv": 0.8620689655172413,
+      "npv": 0.8055555555555556,
+      "accuracy": 0.8307692307692308,
+      "balanced_accuracy": 0.8300189393939394,
+      "f1": 0.819672131147541
+    },
+    {
+      "name": "Fine-tuned efficientnet_b0 (5-model ensemble)",
+      "key": "efficientnet_b0",
+      "roc_auc": 0.9384469696969697,
+      "single_model_auc_mean": 0.918939393939394,
+      "oof_auc": 0.9031385281385281,
+      "tp": 24,
+      "tn": 30,
+      "fp": 3,
+      "fn": 8,
+      "sensitivity": 0.75,
+      "specificity": 0.9090909090909091,
+      "ppv": 0.8888888888888888,
+      "npv": 0.7894736842105263,
+      "accuracy": 0.8307692307692308,
+      "balanced_accuracy": 0.8295454545454546,
+      "f1": 0.8135593220338984
+    },
+    {
+      "name": "Fine-tuned mobilenet_v3_large (5-model ensemble)",
+      "key": "mobilenet_v3_large",
+      "roc_auc": 0.9157196969696969,
+      "single_model_auc_mean": 0.9020833333333332,
+      "oof_auc": 0.8991702741702742,
+      "tp": 26,
+      "tn": 28,
+      "fp": 5,
+      "fn": 6,
+      "sensitivity": 0.8125,
+      "specificity": 0.8484848484848485,
+      "ppv": 0.8387096774193549,
+      "npv": 0.8235294117647058,
+      "accuracy": 0.8307692307692308,
+      "balanced_accuracy": 0.8304924242424243,
+      "f1": 0.8253968253968254
+    },
+    {
+      "name": "Deployed OralSight pipeline (calibrated, threshold 0.28)",
+      "key": "deployed",
+      "roc_auc": 0.9393939393939394,
+      "tp": 30,
+      "tn": 26,
+      "fp": 7,
+      "fn": 2,
+      "sensitivity": 0.9375,
+      "specificity": 0.7878787878787878,
+      "ppv": 0.8108108108108109,
+      "npv": 0.9285714285714286,
+      "accuracy": 0.8615384615384616,
+      "balanced_accuracy": 0.8626893939393939,
+      "f1": 0.8695652173913043
+    }
+  ],
+  "deployed_vs_baseline_auc": {
+    "difference": 0.014204545454545525,
+    "ci95": [
+      -0.04640151515151514,
+      0.08238636363636365
+    ],
+    "p_value_one_sided": 0.342
+  },
+  "curves": {
+    "roc": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0312
+      ],
+      [
+        0.0,
+        0.4062
+      ],
+      [
+        0.0303,
+        0.4062
+      ],
+      [
+        0.0303,
+        0.4688
+      ],
+      [
+        0.0606,
+        0.4688
+      ],
+      [
+        0.0606,
+        0.6875
+      ],
+      [
+        0.0909,
+        0.6875
+      ],
+      [
+        0.0909,
+        0.9375
+      ],
+      [
+        0.2424,
+        0.9375
+      ],
+      [
+        0.2424,
+        0.9688
+      ],
+      [
+        0.4848,
+        0.9688
+      ],
+      [
+        0.4848,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "roc_baseline": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0312
+      ],
+      [
+        0.0,
+        0.5312
+      ],
+      [
+        0.0606,
+        0.5312
+      ],
+      [
+        0.0606,
+        0.5938
+      ],
+      [
+        0.0909,
+        0.5938
+      ],
+      [
+        0.0909,
+        0.6562
+      ],
+      [
+        0.1212,
+        0.6562
+      ],
+      [
+        0.1212,
+        0.875
+      ],
+      [
+        0.1515,
+        0.875
+      ],
+      [
+        0.1515,
+        0.9062
+      ],
+      [
+        0.1818,
+        0.9062
+      ],
+      [
+        0.1818,
+        0.9375
+      ],
+      [
+        0.2424,
+        0.9375
+      ],
+      [
+        0.2424,
+        0.9688
+      ],
+      [
+        0.6667,
+        0.9688
+      ],
+      [
+        0.6667,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0312,
+        1.0
+      ],
+      [
+        0.0625,
+        1.0
+      ],
+      [
+        0.0938,
+        1.0
+      ],
+      [
+        0.125,
+        1.0
+      ],
+      [
+        0.1562,
+        1.0
+      ],
+      [
+        0.1875,
+        1.0
+      ],
+      [
+        0.2188,
+        1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.2812,
+        1.0
+      ],
+      [
+        0.3438,
+        1.0
+      ],
+      [
+        0.375,
+        1.0
+      ],
+      [
+        0.4062,
+        1.0
+      ],
+      [
+        0.4062,
+        0.9286
+      ],
+      [
+        0.4375,
+        0.9333
+      ],
+      [
+        0.4688,
+        0.9375
+      ],
+      [
+        0.4688,
+        0.8824
+      ],
+      [
+        0.5,
+        0.8889
+      ],
+      [
+        0.5312,
+        0.8947
+      ],
+      [
+        0.5625,
+        0.9
+      ],
+      [
+        0.625,
+        0.9091
+      ],
+      [
+        0.6562,
+        0.913
+      ],
+      [
+        0.6875,
+        0.9167
+      ],
+      [
+        0.6875,
+        0.88
+      ],
+      [
+        0.7188,
+        0.8846
+      ],
+      [
+        0.75,
+        0.8889
+      ],
+      [
+        0.7812,
+        0.8929
+      ],
+      [
+        0.8125,
+        0.8966
+      ],
+      [
+        0.8438,
+        0.9
+      ],
+      [
+        0.875,
+        0.9032
+      ],
+      [
+        0.9375,
+        0.9091
+      ],
+      [
+        0.9375,
+        0.8824
+      ],
+      [
+        0.9375,
+        0.8571
+      ],
+      [
+        0.9375,
+        0.8333
+      ],
+      [
+        0.9375,
+        0.8108
+      ],
+      [
+        0.9375,
+        0.7895
+      ],
+      [
+        0.9688,
+        0.7949
+      ],
+      [
+        0.9688,
+        0.775
+      ],
+      [
+        0.9688,
+        0.7561
+      ],
+      [
+        0.9688,
+        0.7381
+      ],
+      [
+        0.9688,
+        0.7045
+      ],
+      [
+        0.9688,
+        0.6889
+      ],
+      [
+        0.9688,
+        0.6739
+      ],
+      [
+        0.9688,
+        0.6596
+      ],
+      [
+        1.0,
+        0.6667
+      ],
+      [
+        1.0,
+        0.6531
+      ],
+      [
+        1.0,
+        0.64
+      ],
+      [
+        1.0,
+        0.6275
+      ],
+      [
+        1.0,
+        0.6154
+      ],
+      [
+        1.0,
+        0.6038
+      ],
+      [
+        1.0,
+        0.5818
+      ],
+      [
+        1.0,
+        0.5714
+      ],
+      [
+        1.0,
+        0.5614
+      ],
+      [
+        1.0,
+        0.5517
+      ],
+      [
+        1.0,
+        0.5424
+      ],
+      [
+        1.0,
+        0.5333
+      ],
+      [
+        1.0,
+        0.5246
+      ],
+      [
+        1.0,
+        0.5161
+      ],
+      [
+        1.0,
+        0.5079
+      ],
+      [
+        1.0,
+        0.4923
+      ]
+    ]
+  },
+  "risk_coverage": {
+    "aurc": 0.07096058507915491,
+    "points": [
+      {
+        "coverage": 0.015384615384615385,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.03076923076923077,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.046153846153846156,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.06153846153846154,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.07692307692307693,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.09230769230769231,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.1076923076923077,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.12307692307692308,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.13846153846153847,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.15384615384615385,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.16923076923076924,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.18461538461538463,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.2,
+        "risk": 0.0,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.2153846153846154,
+        "risk": 0.0714285714285714,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.23076923076923078,
+        "risk": 0.06666666666666665,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.24615384615384617,
+        "risk": 0.0625,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.26153846153846155,
+        "risk": 0.11764705882352944,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.27692307692307694,
+        "risk": 0.11111111111111116,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.2923076923076923,
+        "risk": 0.10526315789473684,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.3076923076923077,
+        "risk": 0.09999999999999998,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.3230769230769231,
+        "risk": 0.09523809523809523,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.3384615384615385,
+        "risk": 0.09090909090909094,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.35384615384615387,
+        "risk": 0.08695652173913049,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.36923076923076925,
+        "risk": 0.08333333333333337,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.38461538461538464,
+        "risk": 0.12,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.4,
+        "risk": 0.11538461538461542,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.4153846153846154,
+        "risk": 0.11111111111111116,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.4307692307692308,
+        "risk": 0.1071428571428571,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.4461538461538462,
+        "risk": 0.10344827586206895,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.46153846153846156,
+        "risk": 0.09999999999999998,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.47692307692307695,
+        "risk": 0.09677419354838712,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.49230769230769234,
+        "risk": 0.09375,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.5076923076923077,
+        "risk": 0.09090909090909094,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.5230769230769231,
+        "risk": 0.08823529411764708,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.5384615384615384,
+        "risk": 0.08571428571428574,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.5538461538461539,
+        "risk": 0.08333333333333337,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.5692307692307692,
+        "risk": 0.08108108108108103,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.5846153846153846,
+        "risk": 0.07894736842105265,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.6,
+        "risk": 0.07692307692307687,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.6153846153846154,
+        "risk": 0.07499999999999996,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.6307692307692307,
+        "risk": 0.07317073170731703,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.6461538461538462,
+        "risk": 0.0714285714285714,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.6615384615384615,
+        "risk": 0.06976744186046513,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.676923076923077,
+        "risk": 0.06818181818181823,
+        "sensitivity": 1.0
+      },
+      {
+        "coverage": 0.6923076923076923,
+        "risk": 0.0888888888888889,
+        "sensitivity": 0.96
+      },
+      {
+        "coverage": 0.7076923076923077,
+        "risk": 0.08695652173913049,
+        "sensitivity": 0.96
+      },
+      {
+        "coverage": 0.7230769230769231,
+        "risk": 0.08510638297872342,
+        "sensitivity": 0.96
+      },
+      {
+        "coverage": 0.7384615384615385,
+        "risk": 0.08333333333333337,
+        "sensitivity": 0.96
+      },
+      {
+        "coverage": 0.7538461538461538,
+        "risk": 0.08163265306122447,
+        "sensitivity": 0.96
+      },
+      {
+        "coverage": 0.7692307692307693,
+        "risk": 0.07999999999999996,
+        "sensitivity": 0.9615384615384616
+      },
+      {
+        "coverage": 0.7846153846153846,
+        "risk": 0.07843137254901966,
+        "sensitivity": 0.9615384615384616
+      },
+      {
+        "coverage": 0.8,
+        "risk": 0.07692307692307687,
+        "sensitivity": 0.9615384615384616
+      },
+      {
+        "coverage": 0.8153846153846154,
+        "risk": 0.07547169811320753,
+        "sensitivity": 0.9615384615384616
+      },
+      {
+        "coverage": 0.8307692307692308,
+        "risk": 0.07407407407407407,
+        "sensitivity": 0.9629629629629629
+      },
+      {
+        "coverage": 0.8461538461538461,
+        "risk": 0.07272727272727275,
+        "sensitivity": 0.9642857142857143
+      },
+      {
+        "coverage": 0.8615384615384616,
+        "risk": 0.0714285714285714,
+        "sensitivity": 0.9655172413793104
+      },
+      {
+        "coverage": 0.8769230769230769,
+        "risk": 0.07017543859649122,
+        "sensitivity": 0.9655172413793104
+      },
+      {
+        "coverage": 0.8923076923076924,
+        "risk": 0.06896551724137934,
+        "sensitivity": 0.9666666666666667
+      },
+      {
+        "coverage": 0.9076923076923077,
+        "risk": 0.06779661016949157,
+        "sensitivity": 0.967741935483871
+      },
+      {
+        "coverage": 0.9230769230769231,
+        "risk": 0.08333333333333337,
+        "sensitivity": 0.9375
+      },
+      {
+        "coverage": 0.9384615384615385,
+        "risk": 0.09836065573770492,
+        "sensitivity": 0.9375
+      },
+      {
+        "coverage": 0.9538461538461539,
+        "risk": 0.11290322580645162,
+        "sensitivity": 0.9375
+      },
+      {
+        "coverage": 0.9692307692307692,
+        "risk": 0.11111111111111116,
+        "sensitivity": 0.9375
+      },
+      {
+        "coverage": 0.9846153846153847,
+        "risk": 0.125,
+        "sensitivity": 0.9375
+      },
+      {
+        "coverage": 1.0,
+        "risk": 0.1384615384615384,
+        "sensitivity": 0.9375
+      },
+      {
+        "coverage": 1.0,
+        "risk": 0.1384615384615384,
+        "sensitivity": 0.9375
+      }
+    ]
+  },
+  "decision_curve": [
+    {
+      "threshold": 0.05,
+      "model": 0.4720647773279352,
+      "treat_all": 0.46558704453441296,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.075,
+      "model": 0.47110187110187113,
+      "treat_all": 0.45114345114345117,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.1,
+      "model": 0.45470085470085475,
+      "treat_all": 0.4358974358974359,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.125,
+      "model": 0.45054945054945056,
+      "treat_all": 0.41978021978021984,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.15,
+      "model": 0.4497737556561086,
+      "treat_all": 0.40271493212669685,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.175,
+      "model": 0.44755244755244755,
+      "treat_all": 0.38461538461538464,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.2,
+      "model": 0.44230769230769235,
+      "treat_all": 0.3653846153846154,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.225,
+      "model": 0.44119106699751864,
+      "treat_all": 0.3449131513647643,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.25,
+      "model": 0.4205128205128205,
+      "treat_all": 0.32307692307692315,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.275,
+      "model": 0.4206896551724138,
+      "treat_all": 0.29973474801061006,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.3,
+      "model": 0.4351648351648352,
+      "treat_all": 0.27472527472527475,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.325,
+      "model": 0.43931623931623937,
+      "treat_all": 0.24786324786324793,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.35,
+      "model": 0.40591715976331366,
+      "treat_all": 0.2189349112426036,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.375,
+      "model": 0.35692307692307695,
+      "treat_all": 0.18769230769230777,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.4,
+      "model": 0.35384615384615387,
+      "treat_all": 0.15384615384615385,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.425,
+      "model": 0.3351170568561873,
+      "treat_all": 0.117056856187291,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.45,
+      "model": 0.3314685314685315,
+      "treat_all": 0.07692307692307698,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.475,
+      "model": 0.3274725274725275,
+      "treat_all": 0.03296703296703307,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.5,
+      "model": 0.3230769230769231,
+      "treat_all": -0.01538461538461533,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.525,
+      "model": 0.302834008097166,
+      "treat_all": -0.06882591093117407,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.55,
+      "model": 0.28205128205128205,
+      "treat_all": -0.1282051282051283,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.575,
+      "model": 0.281447963800905,
+      "treat_all": -0.1945701357466062,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.6,
+      "model": 0.27692307692307694,
+      "treat_all": -0.26923076923076905,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.625,
+      "model": 0.25641025641025644,
+      "treat_all": -0.3538461538461538,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.65,
+      "model": 0.23516483516483516,
+      "treat_all": -0.4505494505494506,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.675,
+      "model": 0.18224852071005915,
+      "treat_all": -0.5621301775147931,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.7,
+      "model": 0.158974358974359,
+      "treat_all": -0.6923076923076921,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.725,
+      "model": 0.14965034965034968,
+      "treat_all": -0.846153846153846,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.75,
+      "model": 0.13846153846153847,
+      "treat_all": -1.0307692307692307,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.775,
+      "model": 0.17777777777777778,
+      "treat_all": -1.2564102564102566,
+      "treat_none": 0.0
+    },
+    {
+      "threshold": 0.8,
+      "model": 0.13846153846153847,
+      "treat_all": -1.5384615384615388,
+      "treat_none": 0.0
+    }
+  ],
+  "robustness": {
+    "clean": {
+      "auc": 0.9393939393939394,
+      "sensitivity": 0.9375,
+      "specificity": 0.7878787878787878,
+      "accuracy": 0.8615384615384616,
+      "abstain_rate": 0.18461538461538463,
+      "quality_reject_rate": 0.0,
+      "quality_flag_rate": 0.13846153846153847
+    },
+    "gaussian_blur": [
+      {
+        "level": "\u03c3=1",
+        "auc": 0.9327651515151515,
+        "sensitivity": 0.9375,
+        "specificity": 0.7878787878787878,
+        "accuracy": 0.8615384615384616,
+        "abstain_rate": 0.2153846153846154,
+        "quality_reject_rate": 0.015384615384615385,
+        "quality_flag_rate": 0.26153846153846155
+      },
+      {
+        "level": "\u03c3=3",
+        "auc": 0.8929924242424243,
+        "sensitivity": 0.90625,
+        "specificity": 0.7272727272727273,
+        "accuracy": 0.8153846153846154,
+        "abstain_rate": 0.5846153846153846,
+        "quality_reject_rate": 0.46153846153846156,
+        "quality_flag_rate": 0.9538461538461539
+      },
+      {
+        "level": "\u03c3=6",
+        "auc": 0.8475378787878788,
+        "sensitivity": 0.96875,
+        "specificity": 0.6060606060606061,
+        "accuracy": 0.7846153846153846,
+        "abstain_rate": 0.9846153846153847,
+        "quality_reject_rate": 0.9846153846153847,
+        "quality_flag_rate": 1.0
+      }
+    ],
+    "jpeg_compression": [
+      {
+        "level": "q=50",
+        "auc": 0.9322916666666666,
+        "sensitivity": 0.96875,
+        "specificity": 0.8181818181818182,
+        "accuracy": 0.8923076923076924,
+        "abstain_rate": 0.16923076923076924,
+        "quality_reject_rate": 0.0,
+        "quality_flag_rate": 0.13846153846153847
+      },
+      {
+        "level": "q=20",
+        "auc": 0.9185606060606061,
+        "sensitivity": 0.96875,
+        "specificity": 0.5757575757575758,
+        "accuracy": 0.7692307692307693,
+        "abstain_rate": 0.2153846153846154,
+        "quality_reject_rate": 0.0,
+        "quality_flag_rate": 0.09230769230769231
+      },
+      {
+        "level": "q=5",
+        "auc": 0.8134469696969697,
+        "sensitivity": 0.96875,
+        "specificity": 0.21212121212121213,
+        "accuracy": 0.5846153846153846,
+        "abstain_rate": 0.5846153846153846,
+        "quality_reject_rate": 0.0,
+        "quality_flag_rate": 0.1076923076923077
+      }
+    ],
+    "darken": [
+      {
+        "level": "\u00d70.7",
+        "auc": 0.9251893939393939,
+        "sensitivity": 0.90625,
+        "specificity": 0.8181818181818182,
+        "accuracy": 0.8615384615384616,
+        "abstain_rate": 0.23076923076923078,
+        "quality_reject_rate": 0.0,
+        "quality_flag_rate": 0.4307692307692308
+      },
+      {
+        "level": "\u00d70.45",
+        "auc": 0.9034090909090909,
+        "sensitivity": 0.8125,
+        "specificity": 0.7878787878787878,
+        "accuracy": 0.8,
+        "abstain_rate": 0.47692307692307695,
+        "quality_reject_rate": 0.24615384615384617,
+        "quality_flag_rate": 1.0
+      },
+      {
+        "level": "\u00d70.2",
+        "auc": 0.8191287878787878,
+        "sensitivity": 0.625,
+        "specificity": 0.7575757575757576,
+        "accuracy": 0.6923076923076923,
+        "abstain_rate": 1.0,
+        "quality_reject_rate": 1.0,
+        "quality_flag_rate": 1.0
+      }
+    ],
+    "brighten": [
+      {
+        "level": "\u00d71.3",
+        "auc": 0.9195075757575758,
+        "sensitivity": 0.90625,
+        "specificity": 0.8181818181818182,
+        "accuracy": 0.8615384615384616,
+        "abstain_rate": 0.18461538461538463,
+        "quality_reject_rate": 0.015384615384615385,
+        "quality_flag_rate": 0.5538461538461539
+      },
+      {
+        "level": "\u00d71.7",
+        "auc": 0.9034090909090908,
+        "sensitivity": 0.9375,
+        "specificity": 0.7575757575757576,
+        "accuracy": 0.8461538461538461,
+        "abstain_rate": 0.4153846153846154,
+        "quality_reject_rate": 0.24615384615384617,
+        "quality_flag_rate": 0.9076923076923077
+      },
+      {
+        "level": "\u00d72.5",
+        "auc": 0.8465909090909091,
+        "sensitivity": 0.90625,
+        "specificity": 0.6060606060606061,
+        "accuracy": 0.7538461538461538,
+        "abstain_rate": 0.6615384615384615,
+        "quality_reject_rate": 0.5846153846153846,
+        "quality_flag_rate": 1.0
+      }
+    ],
+    "sensor_noise": [
+      {
+        "level": "\u03c3=8",
+        "auc": 0.9251893939393939,
+        "sensitivity": 0.9375,
+        "specificity": 0.8484848484848485,
+        "accuracy": 0.8923076923076924,
+        "abstain_rate": 0.2,
+        "quality_reject_rate": 0.015384615384615385,
+        "quality_flag_rate": 0.4461538461538462
+      },
+      {
+        "level": "\u03c3=20",
+        "auc": 0.8816287878787878,
+        "sensitivity": 0.875,
+        "specificity": 0.696969696969697,
+        "accuracy": 0.7846153846153846,
+        "abstain_rate": 0.6307692307692307,
+        "quality_reject_rate": 0.38461538461538464,
+        "quality_flag_rate": 0.9538461538461539
+      },
+      {
+        "level": "\u03c3=40",
+        "auc": 0.5795454545454546,
+        "sensitivity": 0.9375,
+        "specificity": 0.2727272727272727,
+        "accuracy": 0.6,
+        "abstain_rate": 0.9384615384615385,
+        "quality_reject_rate": 0.9076923076923077,
+        "quality_flag_rate": 0.9846153846153847
+      }
+    ]
+  },
+  "ood": {
+    "threshold": 0.5216001701354981,
+    "in_distribution_test_flagged_rate": 0.0,
+    "sets": {
+      "natural_photos_flowers102": {
+        "n": 200,
+        "auroc": 1.0,
+        "detected_rate": 1.0
+      },
+      "synthetic_patterns": {
+        "n": 60,
+        "auroc": 1.0,
+        "detected_rate": 1.0
+      }
+    }
+  },
+  "latency_cpu": {
+    "threads_1": {
+      "p50_ms": 92.91054995264858,
+      "p95_ms": 100.75449000869413
+    },
+    "threads_2": {
+      "p50_ms": 75.98960000905208,
+      "p95_ms": 79.86744504596572
+    },
+    "threads_all": {
+      "p50_ms": 150.72679999866523,
+      "p95_ms": 177.03917000035293
+    }
+  },
+  "calibration_fit": {
+    "arch": "efficientnet_b0",
+    "temperature": 1.2493771811185386,
+    "operating_threshold": 0.2757353186607361,
+    "abstain_margin": 0.11401157081127167,
+    "min_member_agreement": 0.6,
+    "target_sensitivity": 0.9,
+    "target_coverage": 0.85,
+    "oof": {
+      "auc": 0.9031385281385281,
+      "sensitivity_at_op": 0.9047619047619048,
+      "specificity_at_op": 0.7196969696969697
+    },
+    "ood": {
+      "threshold": 0.5216001701354981,
+      "k": 5,
+      "held_out_distance_median": 0.31902340054512024
+    },
+    "baseline": {
+      "C": 0.005994842503189409
+    },
+    "quality": {
+      "sharpness_warn": 21.60975046157837,
+      "sharpness_reject": 7.259330830574036,
+      "brightness_warn_low": 79.4469051361084,
+      "brightness_reject_low": 44.23071002197265,
+      "brightness_warn_high": 174.4342903137207,
+      "brightness_reject_high": 218.82820373535156,
+      "bright_fraction_warn": 0.05251998901367185,
+      "dark_fraction_warn": 0.2,
+      "noise_warn": 1.649889543205068,
+      "noise_reject": 3.217073139770874
+    },
+    "quality_distribution": {
+      "sharpness": {
+        "p1": 14.518661661148071,
+        "p5": 21.60975046157837,
+        "median": 100.92733764648438,
+        "p95": 277.08600463867157,
+        "p99": 562.387155761719
+      },
+      "brightness": {
+        "p1": 73.71785003662109,
+        "p5": 87.21792373657227,
+        "median": 128.63199615478516,
+        "p95": 169.7636894226074,
+        "p99": 182.65640747070313
+      },
+      "bright_fraction": {
+        "p1": 0.0,
+        "p5": 0.0,
+        "median": 0.00040435791015625,
+        "p95": 0.03933258056640623,
+        "p99": 0.07269622802734382
+      },
+      "dark_fraction": {
+        "p1": 0.0,
+        "p5": 0.0,
+        "median": 0.00243377685546875,
+        "p95": 0.08690643310546865,
+        "p99": 0.15260803222656252
+      },
+      "noise": {
+        "p1": 0.25761036071461285,
+        "p5": 0.367976481940598,
+        "median": 0.7436299551164454,
+        "p95": 1.4780494710058902,
+        "p99": 2.144715426513916
+      }
+    }
+  },
+  "training": {
+    "efficientnet_b0": {
+      "arch": "efficientnet_b0",
+      "epochs": 30,
+      "lr": 0.0002,
+      "batch_size": 24,
+      "folds": [
+        {
+          "fold": 0,
+          "best_epoch": 5,
+          "val_loss": 0.37211325764656067,
+          "val_auc": 0.9171597633136095,
+          "seconds": 110.8
+        },
+        {
+          "fold": 1,
+          "best_epoch": 3,
+          "val_loss": 0.4258611500263214,
+          "val_auc": 0.9155555555555557,
+          "seconds": 67.9
+        },
+        {
+          "fold": 2,
+          "best_epoch": 6,
+          "val_loss": 0.3013732135295868,
+          "val_auc": 0.9476923076923076,
+          "seconds": 57.6
+        },
+        {
+          "fold": 3,
+          "best_epoch": 4,
+          "val_loss": 0.5144957304000854,
+          "val_auc": 0.8562962962962963,
+          "seconds": 55.1
+        },
+        {
+          "fold": 4,
+          "best_epoch": 7,
+          "val_loss": 0.43519720435142517,
+          "val_auc": 0.8938461538461537,
+          "seconds": 57.5
+        }
+      ],
+      "oof_auc": 0.9031385281385281
+    },
+    "mobilenet_v3_large": {
+      "arch": "mobilenet_v3_large",
+      "epochs": 30,
+      "lr": 0.0002,
+      "batch_size": 24,
+      "folds": [
+        {
+          "fold": 0,
+          "best_epoch": 5,
+          "val_loss": 0.3515062630176544,
+          "val_auc": 0.9393491124260356,
+          "seconds": 62.5
+        },
+        {
+          "fold": 1,
+          "best_epoch": 3,
+          "val_loss": 0.5997499227523804,
+          "val_auc": 0.7881481481481483,
+          "seconds": 49.3
+        },
+        {
+          "fold": 2,
+          "best_epoch": 7,
+          "val_loss": 0.33851802349090576,
+          "val_auc": 0.9246153846153846,
+          "seconds": 52.1
+        },
+        {
+          "fold": 3,
+          "best_epoch": 8,
+          "val_loss": 0.40642601251602173,
+          "val_auc": 0.8962962962962964,
+          "seconds": 49.6
+        },
+        {
+          "fold": 4,
+          "best_epoch": 8,
+          "val_loss": 0.34598493576049805,
+          "val_auc": 0.9292307692307692,
+          "seconds": 48.9
+        }
+      ],
+      "oof_auc": 0.8991702741702742
+    }
+  }
+}

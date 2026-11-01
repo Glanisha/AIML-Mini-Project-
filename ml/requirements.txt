@@ -1,11 +1,13 @@
-# Ralph: ML / training dependencies (pin versions once the environment is settled)
-torch
-torchvision
-pandas
-numpy
-pillow
-opencv-python
-scikit-learn
-matplotlib
-seaborn
-grad-cam
+# Install PyTorch first with the right wheel for your machine, e.g.
+#   pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
+# (use .../whl/cpu for CPU-only). Versions below are what produced the committed results.
+numpy==2.4.6
+pandas==3.1.0
+pillow==13.0.0
+scikit-learn==1.9.1
+scipy==1.17.1
+matplotlib==3.11.2
+onnx==1.23.2
+onnxruntime==1.31.1
+onnxscript==0.7.2
+pyarrow==26.0.0

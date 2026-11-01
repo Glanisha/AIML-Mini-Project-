@@ -1,0 +1,745 @@
+[
+  {
+    "path": "benign/101.jpg",
+    "label": "benign",
+    "p_malignant": 0.134,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3211,
+    "member_std": 0.1198,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/102.jpg",
+    "label": "benign",
+    "p_malignant": 0.0745,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.2317,
+    "member_std": 0.0439,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/11.jpg",
+    "label": "benign",
+    "p_malignant": 0.8303,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.434,
+    "member_std": 0.108,
+    "outcome": "FP"
+  },
+  {
+    "path": "benign/115.jpg",
+    "label": "benign",
+    "p_malignant": 0.0311,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2394,
+    "member_std": 0.0306,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/122.jpg",
+    "label": "benign",
+    "p_malignant": 0.1431,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2268,
+    "member_std": 0.0331,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/123.jpg",
+    "label": "benign",
+    "p_malignant": 0.0698,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2539,
+    "member_std": 0.0749,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/125.jpg",
+    "label": "benign",
+    "p_malignant": 0.0504,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2559,
+    "member_std": 0.0332,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/129.jpg",
+    "label": "benign",
+    "p_malignant": 0.308,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold.",
+      "The ensemble models disagree with each other."
+    ],
+    "quality": "ok",
+    "ood_score": 0.3399,
+    "member_std": 0.1896,
+    "outcome": "abstained"
+  },
+  {
+    "path": "benign/134.jpg",
+    "label": "benign",
+    "p_malignant": 0.2595,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold.",
+      "The ensemble models disagree with each other."
+    ],
+    "quality": "ok",
+    "ood_score": 0.3331,
+    "member_std": 0.1543,
+    "outcome": "abstained"
+  },
+  {
+    "path": "benign/138.jpg",
+    "label": "benign",
+    "p_malignant": 0.0203,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2884,
+    "member_std": 0.0249,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/14.jpg",
+    "label": "benign",
+    "p_malignant": 0.1061,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2233,
+    "member_std": 0.0337,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/143.jpg",
+    "label": "benign",
+    "p_malignant": 0.2776,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "ok",
+    "ood_score": 0.3225,
+    "member_std": 0.083,
+    "outcome": "abstained"
+  },
+  {
+    "path": "benign/144.jpg",
+    "label": "benign",
+    "p_malignant": 0.081,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.3344,
+    "member_std": 0.0875,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/147.jpg",
+    "label": "benign",
+    "p_malignant": 0.0114,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.241,
+    "member_std": 0.0187,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/153.jpg",
+    "label": "benign",
+    "p_malignant": 0.0579,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3099,
+    "member_std": 0.0448,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/156.jpg",
+    "label": "benign",
+    "p_malignant": 0.0385,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3151,
+    "member_std": 0.0225,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/160.jpg",
+    "label": "benign",
+    "p_malignant": 0.0911,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3802,
+    "member_std": 0.0716,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/161.jpg",
+    "label": "benign",
+    "p_malignant": 0.0645,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.3594,
+    "member_std": 0.0441,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/20.jpg",
+    "label": "benign",
+    "p_malignant": 0.2808,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold.",
+      "The ensemble models disagree with each other."
+    ],
+    "quality": "ok",
+    "ood_score": 0.3463,
+    "member_std": 0.0939,
+    "outcome": "abstained"
+  },
+  {
+    "path": "benign/28.jpg",
+    "label": "benign",
+    "p_malignant": 0.0577,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.2355,
+    "member_std": 0.0345,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/36.jpg",
+    "label": "benign",
+    "p_malignant": 0.7741,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.4144,
+    "member_std": 0.1029,
+    "outcome": "FP"
+  },
+  {
+    "path": "benign/44.jpg",
+    "label": "benign",
+    "p_malignant": 0.2984,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "ok",
+    "ood_score": 0.2889,
+    "member_std": 0.0913,
+    "outcome": "abstained"
+  },
+  {
+    "path": "benign/46.jpg",
+    "label": "benign",
+    "p_malignant": 0.095,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2608,
+    "member_std": 0.0595,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/47.jpg",
+    "label": "benign",
+    "p_malignant": 0.0449,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2885,
+    "member_std": 0.0254,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/48.jpg",
+    "label": "benign",
+    "p_malignant": 0.0131,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2785,
+    "member_std": 0.0224,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/5.jpg",
+    "label": "benign",
+    "p_malignant": 0.0984,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.326,
+    "member_std": 0.087,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/51.jpg",
+    "label": "benign",
+    "p_malignant": 0.0143,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2771,
+    "member_std": 0.0154,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/69.jpg",
+    "label": "benign",
+    "p_malignant": 0.068,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2689,
+    "member_std": 0.0663,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/75.jpg",
+    "label": "benign",
+    "p_malignant": 0.2112,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "ok",
+    "ood_score": 0.3206,
+    "member_std": 0.1312,
+    "outcome": "abstained"
+  },
+  {
+    "path": "benign/82.jpg",
+    "label": "benign",
+    "p_malignant": 0.0242,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2505,
+    "member_std": 0.0282,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/83.jpg",
+    "label": "benign",
+    "p_malignant": 0.0636,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2434,
+    "member_std": 0.052,
+    "outcome": "TN"
+  },
+  {
+    "path": "benign/9.jpg",
+    "label": "benign",
+    "p_malignant": 0.5557,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3326,
+    "member_std": 0.0775,
+    "outcome": "FP"
+  },
+  {
+    "path": "benign/90.jpg",
+    "label": "benign",
+    "p_malignant": 0.1573,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.4117,
+    "member_std": 0.0554,
+    "outcome": "TN"
+  },
+  {
+    "path": "malignant/10.jpg",
+    "label": "malignant",
+    "p_malignant": 0.9247,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3357,
+    "member_std": 0.074,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/102.jpg",
+    "label": "malignant",
+    "p_malignant": 0.795,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2832,
+    "member_std": 0.1148,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/112.jpg",
+    "label": "malignant",
+    "p_malignant": 0.919,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3482,
+    "member_std": 0.0797,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/116.jpg",
+    "label": "malignant",
+    "p_malignant": 0.2251,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "ok",
+    "ood_score": 0.249,
+    "member_std": 0.1078,
+    "outcome": "abstained"
+  },
+  {
+    "path": "malignant/117.jpg",
+    "label": "malignant",
+    "p_malignant": 0.3709,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "ok",
+    "ood_score": 0.3127,
+    "member_std": 0.1113,
+    "outcome": "abstained"
+  },
+  {
+    "path": "malignant/133.jpg",
+    "label": "malignant",
+    "p_malignant": 0.0821,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.292,
+    "member_std": 0.0445,
+    "outcome": "FN"
+  },
+  {
+    "path": "malignant/14.jpg",
+    "label": "malignant",
+    "p_malignant": 0.6575,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3652,
+    "member_std": 0.0984,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/141.jpg",
+    "label": "malignant",
+    "p_malignant": 0.933,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2938,
+    "member_std": 0.0828,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/142.jpeg",
+    "label": "malignant",
+    "p_malignant": 0.8647,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3234,
+    "member_std": 0.1171,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/149.jpg",
+    "label": "malignant",
+    "p_malignant": 0.9444,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3308,
+    "member_std": 0.0489,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/156.jpg",
+    "label": "malignant",
+    "p_malignant": 0.8698,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.4221,
+    "member_std": 0.1955,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/22.jpg",
+    "label": "malignant",
+    "p_malignant": 0.7752,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.3384,
+    "member_std": 0.1076,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/24.jpg",
+    "label": "malignant",
+    "p_malignant": 0.4235,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.3814,
+    "member_std": 0.0782,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/25.jpg",
+    "label": "malignant",
+    "p_malignant": 0.373,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "ok",
+    "ood_score": 0.4414,
+    "member_std": 0.1018,
+    "outcome": "abstained"
+  },
+  {
+    "path": "malignant/33.jpg",
+    "label": "malignant",
+    "p_malignant": 0.6917,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3768,
+    "member_std": 0.167,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/38.jpg",
+    "label": "malignant",
+    "p_malignant": 0.5046,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2864,
+    "member_std": 0.0926,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/42.jpg",
+    "label": "malignant",
+    "p_malignant": 0.6019,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2601,
+    "member_std": 0.1909,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/54.jpg",
+    "label": "malignant",
+    "p_malignant": 0.8891,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3207,
+    "member_std": 0.1258,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/56.jpg",
+    "label": "malignant",
+    "p_malignant": 0.5372,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2673,
+    "member_std": 0.0462,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/58.jpg",
+    "label": "malignant",
+    "p_malignant": 0.5638,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3516,
+    "member_std": 0.1299,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/59.jpg",
+    "label": "malignant",
+    "p_malignant": 0.3662,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold.",
+      "The ensemble models disagree with each other."
+    ],
+    "quality": "ok",
+    "ood_score": 0.374,
+    "member_std": 0.2065,
+    "outcome": "abstained"
+  },
+  {
+    "path": "malignant/6.jpg",
+    "label": "malignant",
+    "p_malignant": 0.3376,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "ok",
+    "ood_score": 0.2896,
+    "member_std": 0.2123,
+    "outcome": "abstained"
+  },
+  {
+    "path": "malignant/60.jpg",
+    "label": "malignant",
+    "p_malignant": 0.6507,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2921,
+    "member_std": 0.1109,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/66.jpg",
+    "label": "malignant",
+    "p_malignant": 0.674,
+    "abstained": false,
+    "reasons": [],
+    "quality": "warning",
+    "ood_score": 0.3511,
+    "member_std": 0.1181,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/69.jpg",
+    "label": "malignant",
+    "p_malignant": 0.9137,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3694,
+    "member_std": 0.0797,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/70.jpg",
+    "label": "malignant",
+    "p_malignant": 0.3393,
+    "abstained": true,
+    "reasons": [
+      "The model's score is too close to its decision threshold."
+    ],
+    "quality": "warning",
+    "ood_score": 0.2818,
+    "member_std": 0.0692,
+    "outcome": "abstained"
+  },
+  {
+    "path": "malignant/71.jpg",
+    "label": "malignant",
+    "p_malignant": 0.9284,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2717,
+    "member_std": 0.0781,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/84.jpg",
+    "label": "malignant",
+    "p_malignant": 0.9066,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.4167,
+    "member_std": 0.0604,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/88.jpg",
+    "label": "malignant",
+    "p_malignant": 0.8823,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.3332,
+    "member_std": 0.1069,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/90.jpg",
+    "label": "malignant",
+    "p_malignant": 0.864,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2872,
+    "member_std": 0.1252,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/98.jpg",
+    "label": "malignant",
+    "p_malignant": 0.8782,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.49,
+    "member_std": 0.0792,
+    "outcome": "TP"
+  },
+  {
+    "path": "malignant/99.jpg",
+    "label": "malignant",
+    "p_malignant": 0.636,
+    "abstained": false,
+    "reasons": [],
+    "quality": "ok",
+    "ood_score": 0.2857,
+    "member_std": 0.1237,
+    "outcome": "TP"
+  }
+]

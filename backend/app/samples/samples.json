@@ -1,0 +1,55 @@
+{
+  "attribution": "Chandrashekar H S, Geetha Kiran A, Murali S, Dinesh M S, Nanditha B R (2021). Oral Images Dataset, Mendeley Data, V2. doi:10.17632/mhjyrn35p4.2. Licensed CC BY 4.0.",
+  "note": "Held-out test images never used in training or model selection.",
+  "samples": [
+    {
+      "id": "malignant-1",
+      "category": "malignant",
+      "title": "Malignant lesion: correctly flagged",
+      "true_label": "malignant",
+      "source_file": "malignant/149.jpg"
+    },
+    {
+      "id": "malignant-2",
+      "category": "malignant",
+      "title": "Malignant lesion: correctly flagged",
+      "true_label": "malignant",
+      "source_file": "malignant/141.jpg"
+    },
+    {
+      "id": "benign-3",
+      "category": "benign",
+      "title": "Benign lesion: correctly classed lower-suspicion",
+      "true_label": "benign",
+      "source_file": "benign/147.jpg"
+    },
+    {
+      "id": "benign-4",
+      "category": "benign",
+      "title": "Benign lesion: correctly classed lower-suspicion",
+      "true_label": "benign",
+      "source_file": "benign/48.jpg"
+    },
+    {
+      "id": "uncertain-5",
+      "category": "uncertain",
+      "title": "Borderline case: model abstains",
+      "true_label": "benign",
+      "source_file": "benign/143.jpg"
+    },
+    {
+      "id": "misclassified-6",
+      "category": "misclassified",
+      "title": "Known error: model is wrong",
+      "true_label": "benign",
+      "source_file": "benign/11.jpg"
+    },
+    {
+      "id": "degraded-7",
+      "category": "degraded",
+      "title": "Degraded photo: heavy blur triggers quality gate",
+      "true_label": "benign",
+      "source_file": "benign/51.jpg"
+    }
+  ]
+}
