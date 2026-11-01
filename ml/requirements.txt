@@ -1,0 +1,11 @@
+# Ralph: ML / training dependencies (pin versions once the environment is settled)
+torch
+torchvision
+pandas
+numpy
+pillow
+opencv-python
+scikit-learn
+matplotlib
+seaborn
+grad-cam
