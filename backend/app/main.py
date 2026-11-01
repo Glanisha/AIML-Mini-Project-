@@ -1,43 +1,67 @@
+import json
+import os
 import time
+from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 
-from .schemas import AnalyzeResponse, HealthResponse, QualityReport
+from .images import MAX_UPLOAD_BYTES, InvalidImageError, load_image
+from .model import Predictor
+from .schemas import AnalyzeResponse, HealthResponse
 
-MODEL_VERSION = "mock-0.0.0"
-ALLOWED_TYPES = {"image/jpeg", "image/png", "image/webp"}
+METRICS_PATH = Path(os.getenv("METRICS_PATH", Path(__file__).parent / "data" / "metrics.json"))
 
-app = FastAPI(title="OralSight API", version="0.1.0")
+predictor = Predictor()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    predictor.load()  # load the model once, not per request
+    yield
+
+
+app = FastAPI(title="OralSight API", version="0.1.0", lifespan=lifespan)
+
+# The native app does not need CORS; this only matters for browser tools like /docs
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET", "POST"], allow_headers=["*"])
 
 
 @app.get("/health", response_model=HealthResponse)
 def health() -> HealthResponse:
-    return HealthResponse(status="ok", model_loaded=False, model_version=MODEL_VERSION)
+    return HealthResponse(status="ok", model_loaded=predictor.loaded, model_version=predictor.version)
+
+
+@app.get("/metrics")
+def metrics() -> dict:
+    # Ralph's evaluation writes metrics.json; the app only displays saved results
+    if not METRICS_PATH.exists():
+        raise HTTPException(status_code=404, detail="No evaluation metrics have been published yet.")
+    return json.loads(METRICS_PATH.read_text(encoding="utf-8"))
 
 
 @app.post("/analyze", response_model=AnalyzeResponse)
 async def analyze(file: UploadFile = File(...)) -> AnalyzeResponse:
-    # MOCK: returns a fixed response until Ralph's model bundle is integrated (task P4)
     start = time.perf_counter()
-    if file.content_type not in ALLOWED_TYPES:
-        raise HTTPException(status_code=415, detail="Unsupported format. Use JPEG, PNG or WebP.")
-    await file.read()  # images are not retained
+
+    data = await file.read(MAX_UPLOAD_BYTES + 1)  # images are processed in memory and never stored
+    try:
+        image = load_image(data)
+    except InvalidImageError as e:
+        raise HTTPException(status_code=e.status_code, detail=str(e))
+
+    prediction = await run_in_threadpool(predictor.predict, image)
 
     return AnalyzeResponse(
-        predicted_label="benign",
-        class_scores={"benign": 0.72, "malignant": 0.28},
-        quality=QualityReport(status="ok", reasons=[]),
-        abstained=False,
-        heatmap_available=False,
-        model_version=MODEL_VERSION,
+        predicted_label=prediction.predicted_label,
+        class_scores=prediction.class_scores,
+        quality=prediction.quality,
+        abstained=prediction.abstained,
+        heatmap_available=prediction.heatmap_png_base64 is not None,
+        heatmap_png_base64=prediction.heatmap_png_base64,
+        model_version=predictor.version,
         latency_ms=round((time.perf_counter() - start) * 1000, 2),
-        is_mock=True,
+        is_mock=predictor.is_mock,
     )

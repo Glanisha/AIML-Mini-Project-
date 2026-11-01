@@ -1,0 +1,36 @@
+{
+  "is_mock": true,
+  "model_version": "mock-0.0.0",
+  "dataset": "Placeholder (pending dataset audit)",
+  "test_size": 0,
+  "models": [
+    {
+      "name": "Baseline: frozen embeddings + logistic regression",
+      "accuracy": 0.5,
+      "malignant_recall": 0.5,
+      "specificity": 0.5,
+      "f1": 0.5,
+      "roc_auc": 0.5
+    },
+    {
+      "name": "Fine-tuned CNN",
+      "accuracy": 0.5,
+      "malignant_recall": 0.5,
+      "specificity": 0.5,
+      "f1": 0.5,
+      "roc_auc": 0.5
+    }
+  ],
+  "confusion_matrix": {
+    "labels": ["benign", "malignant"],
+    "matrix": [
+      [0, 0],
+      [0, 0]
+    ]
+  },
+  "cpu_latency_ms": null,
+  "notes": [
+    "Placeholder values only. Replace with Ralph's saved evaluation output (R7).",
+    "Heatmaps show model attention, not verified lesion boundaries."
+  ]
+}
