@@ -22,7 +22,7 @@ You photograph a lesion and OralSight runs these steps:
 | Non-oral photos rejected / genuine lesions wrongly rejected | 100% / 0% |
 | CPU latency, full pipeline including heatmap | about 80 ms (2 threads) |
 
-The full write-up is in [docs/REPORT.md](docs/REPORT.md), with the model card in [docs/MODEL_CARD.md](docs/MODEL_CARD.md) and figures in [ml/reports/figures/](ml/reports/figures/).
+The full write-up and model card are in [docs/REPORT.md](docs/REPORT.md), with figures in [ml/reports/figures/](ml/reports/figures/).
 
 ## Repository layout
 
@@ -81,7 +81,45 @@ npm run typecheck && npm run lint
 
 In development the app calls `http://<laptop-ip>:8000` automatically. Set `EXPO_PUBLIC_API_URL` to override this (see `mobile/.env.example`). On Windows, allow Python through the firewall on private networks.
 
-**Retraining** (optional; about 10 minutes on an RTX 3050): see [ml/README.md](ml/README.md).
+## Retraining (optional)
+
+One reproducible pipeline takes you from the raw dataset to the model bundle the backend serves:
+
+```text
+audit ─▶ 5-fold CV training (2 architectures) ─▶ calibration & thresholds ─▶ ONNX export ─▶ test evaluation
+```
+
+| Stage | Module | Output |
+| --- | --- | --- |
+| Dataset audit, duplicate grouping, splits | `ml/oralsight_ml/audit.py` | `ml/reports/dataset_audit.json`, `ml/reports/splits.csv` |
+| Fine-tuning (EfficientNet-B0, MobileNetV3-Large) | `ml/oralsight_ml/train.py` | `ml/artifacts/<arch>/fold*.pt`, out-of-fold logits |
+| Baseline, OOD statistics, temperature scaling, thresholds, quality limits | `ml/oralsight_ml/calibrate.py` | `ml/artifacts/calibration.json` |
+| Model bundle (ONNX + config), with parity check | `ml/oralsight_ml/export.py` | `backend/app/model_bundle/` |
+| Locked test evaluation, robustness, OOD, latency, figures, demo pack | `ml/oralsight_ml/evaluate.py`, `figures.py` | `ml/reports/metrics_full.json`, `ml/reports/figures/`, `backend/app/data/metrics.json`, `backend/app/samples/` |
+
+```bash
+cd ml
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128   # or the CPU wheel
+pip install -r requirements.txt
+```
+
+Download the [Oral Images Dataset](https://data.mendeley.com/datasets/mhjyrn35p4/2) (CC BY 4.0). Copy only the `original_data` images into:
+
+```text
+ml/data/raw/benign/      <- original_data/benign_lesions
+ml/data/raw/malignant/   <- original_data/malignant_lesions
+```
+
+Don't use the dataset's `augmented_data` folder. Its images are flips and rotations of the originals, so they would leak between the train and test splits.
+
+```bash
+python run_pipeline.py               # everything (≈10 min on an RTX 3050; CPU works but is slower)
+python run_pipeline.py --skip-train  # recalibrate / re-export / re-evaluate saved checkpoints
+```
+
+The methodological safeguards (leakage control, locked test set, train/serve parity) are described in [docs/REPORT.md](docs/REPORT.md) §2–3.
 
 ## API
 

@@ -3,7 +3,7 @@
     python run_pipeline.py                 # audit -> train -> calibrate -> export -> evaluate
     python run_pipeline.py --skip-train    # re-run calibration/export/evaluation on saved checkpoints
 
-Raw data must be in ml/data/raw/{benign,malignant} (see ml/README.md).
+Raw data must be in ml/data/raw/{benign,malignant} (see the root README.md).
 """
 
 import argparse

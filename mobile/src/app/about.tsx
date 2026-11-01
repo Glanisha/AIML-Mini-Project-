@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 
-import { Card } from '@/components/Card';
+import { Card } from '@/components/ui';
 import { getModelCard } from '@/lib/api';
 import type { ModelCard } from '@/lib/types';
 

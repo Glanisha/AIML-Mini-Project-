@@ -3,10 +3,8 @@ import { Pressable, Text, View } from 'react-native';
 
 import type { AnalyzeResponse, TriageLevel } from '@/lib/types';
 
-import { Banner } from './Banner';
-import { Card } from './Card';
 import { RiskGauge } from './RiskGauge';
-import { Tag } from './Tag';
+import { Banner, Card, Tag } from './ui';
 
 export function triageStyle(level: TriageLevel) {
   return {

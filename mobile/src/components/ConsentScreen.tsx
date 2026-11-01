@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { Button } from './Button';
+import { Button } from './ui';
 
 const POINTS = [
   ['Research prototype', 'OralSight is an academic project for an AI in Healthcare lab. It is not a medical device and has not been clinically validated.'],

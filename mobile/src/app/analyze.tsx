@@ -2,10 +2,8 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Alert, Image, Pressable, ScrollView, Text, View } from 'react-native';
 
-import { Banner } from '@/components/Banner';
-import { Button } from '@/components/Button';
 import { ResultView } from '@/components/ResultView';
-import { Tag } from '@/components/Tag';
+import { Banner, Button, Tag } from '@/components/ui';
 import { analyzeImage, analyzeSample } from '@/lib/api';
 import { getHistoryEntry, saveToHistory } from '@/lib/history';
 import { pickImage, type ImageSource } from '@/lib/pickImage';

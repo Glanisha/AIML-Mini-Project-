@@ -3,9 +3,9 @@ import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { Button } from '@/components/Button';
 import { HistoryRow } from '@/components/HistoryRow';
 import { ServerStatus } from '@/components/ServerStatus';
+import { Button } from '@/components/ui';
 import { listHistory, type HistoryEntry } from '@/lib/history';
 import { pickImage, type ImageSource } from '@/lib/pickImage';
 

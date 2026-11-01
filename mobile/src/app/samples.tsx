@@ -2,9 +2,7 @@ import { router } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, Image, Pressable, ScrollView, Text, View } from 'react-native';
 
-import { Banner } from '@/components/Banner';
-import { Button } from '@/components/Button';
-import { Tag, type TagColor } from '@/components/Tag';
+import { Banner, Button, Tag, type TagColor } from '@/components/ui';
 import { getSamples } from '@/lib/api';
 import type { SamplesResponse } from '@/lib/types';
 

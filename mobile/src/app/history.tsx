@@ -2,8 +2,8 @@ import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { Alert, Platform, ScrollView, Text, View } from 'react-native';
 
-import { Button } from '@/components/Button';
 import { HistoryRow } from '@/components/HistoryRow';
+import { Button } from '@/components/ui';
 import { clearHistory, listHistory, type HistoryEntry } from '@/lib/history';
 
 export default function History() {

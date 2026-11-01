@@ -1,11 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
 
-import { Banner } from '@/components/Banner';
-import { Button } from '@/components/Button';
-import { Card } from '@/components/Card';
 import { LineChart } from '@/components/LineChart';
-import { MetricTile } from '@/components/MetricTile';
+import { Banner, Button, Card, MetricTile } from '@/components/ui';
 import { getMetrics } from '@/lib/api';
 import type { MetricsResponse, RobustnessRow } from '@/lib/types';
 
