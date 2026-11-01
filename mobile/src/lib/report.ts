@@ -48,7 +48,7 @@ function buildHtml(r: AnalyzeResponse, imageBase64: string | null): string {
   <h2>Reasons for abstaining</h2>${list(r.abstain_reasons)}
   <h2>Image quality: ${escape(r.quality.status)}</h2>${list(r.quality.reasons)}
   <h2>Familiarity check</h2><p>${r.ood.in_distribution ? 'Image resembles the training data.' : 'Image is unlike the training data; the result is not reliable.'} (distance ${r.ood.score.toFixed(3)}, limit ${r.ood.threshold.toFixed(3)})</p>
-  <p class="warn">Academic research prototype from an AI in Healthcare lab. Not a medical device and not a diagnosis.
+  <p class="warn">Research prototype. Not a medical device and not a diagnosis.
   It does not stage cancer or give treatment advice. Any oral lesion lasting more than 2 weeks should be examined by a clinician.</p>
 </body></html>`;
 }

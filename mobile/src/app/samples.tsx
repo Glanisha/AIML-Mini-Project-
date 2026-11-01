@@ -49,9 +49,6 @@ export default function Samples() {
 
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-3 p-5 pb-10">
-      <Text className="text-sm leading-5 text-slate-600">
-        Real held-out test images that the model never saw during training or tuning. They include a known error, so you can see where the model fails as well as where it works.
-      </Text>
       {data.samples.map((s) => {
         const c = CATEGORY[s.category] ?? { label: s.category, color: 'slate' as TagColor };
         return (

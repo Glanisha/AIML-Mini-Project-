@@ -51,7 +51,7 @@ export default function RootLayout() {
         <Stack.Screen name="samples" options={{ title: 'Sample cases' }} />
         <Stack.Screen name="history" options={{ title: 'History' }} />
         <Stack.Screen name="evidence" options={{ title: 'Model evidence' }} />
-        <Stack.Screen name="about" options={{ title: 'About & model card' }} />
+        <Stack.Screen name="about" options={{ title: 'About' }} />
       </Stack>
     </>
   );

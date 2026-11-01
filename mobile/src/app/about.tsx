@@ -9,7 +9,7 @@ const SECTIONS: [string, string[]][] = [
   [
     'Intended use',
     [
-      'Research demonstration of explainable, uncertainty-aware screening support for oral lesion photographs.',
+      'Screening support for photographs of visible oral lesions.',
       'Helping a user or health worker decide whether a lesion warrants prompt professional examination.',
     ],
   ],
@@ -38,7 +38,6 @@ const SECTIONS: [string, string[]][] = [
       'The referral threshold favours sensitivity: missing a malignancy is worse than an unnecessary check-up.',
       'Uploaded photos are processed in memory and never stored on the server. History stays on the device.',
       'No accounts, tracking or third-party analytics.',
-      'Limitations are shown alongside results, not hidden.',
     ],
   ],
   [
@@ -61,10 +60,6 @@ export default function About() {
 
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-4 p-5 pb-12">
-      <Text className="text-sm leading-5 text-slate-600">
-        OralSight is a two-person mini project for an AI in Healthcare lab. This page is its model card: what it is for, how it works and where it falls short.
-      </Text>
-
       {card ? (
         <Card title="Deployed model">
           {(

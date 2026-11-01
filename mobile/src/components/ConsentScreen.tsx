@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from './ui';
 
 const POINTS = [
-  ['Research prototype', 'OralSight is an academic project for an AI in Healthcare lab. It is not a medical device and has not been clinically validated.'],
+  ['Research prototype', 'Not a medical device and not clinically validated.'],
   ['Not a diagnosis', 'It estimates whether a photo resembles benign or malignant lesions from a small training dataset. Only a clinician, usually with a biopsy, can diagnose oral cancer.'],
   ['No staging or treatment advice', 'The app never stages disease or recommends treatment.'],
   ['Your privacy', 'Photos are analysed in memory and never stored on the server. History is kept only on this device and can be deleted at any time.'],
@@ -19,7 +19,6 @@ export function ConsentScreen({ onAccept }: { onAccept: () => void }) {
     <SafeAreaView className="flex-1 bg-slate-50">
       <ScrollView contentContainerClassName="gap-4 px-6 py-8">
         <Text className="text-3xl font-bold text-teal-700">Before you start</Text>
-        <Text className="text-slate-600">Please read how OralSight should and should not be used.</Text>
         {POINTS.map(([title, body]) => (
           <View key={title} className="rounded-2xl border border-slate-200 bg-white p-4">
             <Text className="font-semibold text-slate-900">{title}</Text>

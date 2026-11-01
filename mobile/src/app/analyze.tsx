@@ -88,7 +88,7 @@ export default function Analyze() {
     <ScrollView className="flex-1" contentContainerClassName="gap-4 p-5 pb-12">
       {sampleMeta.title ? (
         <View className="flex-row flex-wrap items-center gap-2">
-          <Tag label="Held-out sample case" color="sky" />
+          <Tag label="Sample case" color="sky" />
           {sampleMeta.label ? <Tag label={`Ground truth: ${sampleMeta.label}`} color="slate" /> : null}
         </View>
       ) : null}
@@ -124,8 +124,8 @@ export default function Analyze() {
           {showHeatmap ? (
             <Text className="text-xs leading-4 text-slate-500">
               Red areas influenced the model most toward &ldquo;
-              {result.predicted_label ?? (result.positive_probability >= result.operating_threshold ? 'malignant' : 'benign')}&rdquo;. This shows model attention, not a
-              verified lesion boundary.
+              {result.predicted_label ?? (result.positive_probability >= result.operating_threshold ? 'malignant' : 'benign')}&rdquo;. Shows model attention, not a lesion
+              boundary.
             </Text>
           ) : null}
         </View>

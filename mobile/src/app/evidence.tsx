@@ -53,8 +53,7 @@ export default function Evidence() {
       {m.is_mock ? <Banner tone="info" title="Placeholder metrics" lines={['These are not real results.']} /> : null}
 
       <Text className="text-sm leading-5 text-slate-600">
-        Results on {m.test_size} held-out test images never used for training, tuning or model selection. Every figure here comes from the saved evaluation of the deployed model
-        ({m.model_version}).
+        {m.test_size} held-out test images · {m.model_version}
       </Text>
 
       {h ? (
@@ -69,8 +68,7 @@ export default function Evidence() {
           </View>
           {m.operating_threshold != null ? (
             <Text className="mt-3 text-xs text-slate-500">
-              At the deployed referral threshold of {pct(m.operating_threshold)}, chosen on cross-validation to reach ≥90% sensitivity. 95% CIs from 2,000 stratified bootstrap
-              resamples.
+              At the {pct(m.operating_threshold)} referral threshold, with 95% bootstrap CIs.
             </Text>
           ) : null}
         </Card>
@@ -130,12 +128,11 @@ export default function Evidence() {
               </Text>
             </View>
           ))}
-          <Text className="text-xs text-slate-500">Architecture chosen on cross-validation AUC, not on these test numbers.</Text>
         </Card>
       ) : null}
 
       {m.calibration ? (
-        <Card title="Calibration: can the scores be trusted as probabilities?">
+        <Card title="Calibration">
           <LineChart
             series={[
               {
@@ -157,13 +154,13 @@ export default function Evidence() {
             yLabel="Observed rate"
           />
           <Text className="mt-2 text-xs text-slate-500">
-            Points on the diagonal mean a score of 70% really is malignant ~70% of the time. Brier score {m.calibration.brier_before.toFixed(3)} → {m.calibration.brier_after.toFixed(3)}.
+            Brier score {m.calibration.brier_before.toFixed(3)} → {m.calibration.brier_after.toFixed(3)}
           </Text>
         </Card>
       ) : null}
 
       {m.risk_coverage && m.selective ? (
-        <Card title="Knowing when not to answer">
+        <Card title="Abstention">
           <LineChart
             series={[{ label: `Error rate (AURC ${m.risk_coverage.aurc.toFixed(3)})`, color: TEAL, points: m.risk_coverage.points.map((p) => [p.coverage, p.risk]) }]}
             verticalLine={{ x: m.selective.coverage, color: AMBER, label: `Deployed: answers ${pct(m.selective.coverage)}` }}
@@ -172,14 +169,14 @@ export default function Evidence() {
             yDomain={[0, Math.max(0.5, ...m.risk_coverage.points.map((p) => p.risk))]}
           />
           <Text className="mt-2 text-xs text-slate-500">
-            The model abstains on {m.selective.abstained} of {m.test_size} test images. On the cases it does answer, sensitivity is{' '}
-            {m.selective.sensitivity != null ? pct(m.selective.sensitivity) : 'n/a'} and specificity {m.selective.specificity != null ? pct(m.selective.specificity) : 'n/a'}.
+            Abstains on {m.selective.abstained} of {m.test_size}. On answered cases: sensitivity {m.selective.sensitivity != null ? pct(m.selective.sensitivity) : 'n/a'}, specificity{' '}
+            {m.selective.specificity != null ? pct(m.selective.specificity) : 'n/a'}.
           </Text>
         </Card>
       ) : null}
 
       {m.decision_curve ? (
-        <Card title="Decision curve: is it clinically useful?">
+        <Card title="Decision curve">
           <LineChart
             series={[
               { label: 'OralSight', color: TEAL, points: m.decision_curve.map((r) => [r.threshold, r.model]) },
@@ -192,8 +189,7 @@ export default function Evidence() {
             yLabel="Net benefit"
           />
           <Text className="mt-2 text-xs text-slate-500">
-            Net benefit weighs true referrals against unnecessary ones. A curve above both reference lines means using the model beats referring everyone or no one at that
-            threshold, for this dataset&apos;s ~50% prevalence.
+            At this dataset&apos;s ~50% prevalence.
           </Text>
         </Card>
       ) : null}
@@ -218,7 +214,7 @@ export default function Evidence() {
         <Card title="Data">
           <Text className="text-sm text-slate-700">
             {m.audit.n_images} original images ({Object.entries(m.audit.class_counts).map(([k, v]) => `${v} ${k}`).join(', ')}). {m.audit.near_duplicate_pairs} near-duplicate
-            pairs grouped into {m.audit.n_groups} groups so that no lesion appears in both training and test data.
+            pairs grouped.
           </Text>
           <Text className="mt-2 text-xs text-slate-500">{m.dataset}</Text>
         </Card>
@@ -227,7 +223,7 @@ export default function Evidence() {
       {m.cpu_latency_ms != null ? (
         <Card title="Runtime">
           <Text className="text-sm text-slate-700">
-            Median {Math.round(m.cpu_latency_ms)} ms per image for the full pipeline (quality, familiarity, 5 models, heatmap) on 2 CPU threads with ONNX Runtime. No GPU needed.
+            Median {Math.round(m.cpu_latency_ms)} ms per image on 2 CPU threads.
           </Text>
         </Card>
       ) : null}
@@ -241,7 +237,7 @@ function RobustnessCard({ robustness }: { robustness: NonNullable<MetricsRespons
   const entries = Object.entries(robustness).filter(([k]) => k !== 'clean') as [string, RobustnessRow[]][];
   return (
     <Card title="Robustness to poor photos">
-      <Text className="mb-3 text-xs text-slate-500">AUC on the test set after synthetic degradation, and how often the app refuses to answer instead.</Text>
+      <Text className="mb-3 text-xs text-slate-500">AUC and abstention rate after synthetic degradation.</Text>
       {entries.map(([name, rows]) => (
         <View key={name} className="mb-3">
           <Text className="mb-1 text-sm font-medium capitalize text-slate-800">{name.replace(/_/g, ' ')}</Text>

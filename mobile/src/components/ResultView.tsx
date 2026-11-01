@@ -46,10 +46,7 @@ export function ResultView({ result }: { result: AnalyzeResponse }) {
       ) : null}
 
       <Card title="Malignancy-likeness score">
-        <View className="mb-2 flex-row items-end gap-2">
-          <Text className="text-3xl font-bold text-slate-900">{pct(result.positive_probability)}</Text>
-          <Text className="mb-1 text-sm text-slate-500">calibrated ensemble score</Text>
-        </View>
+        <Text className="mb-2 text-3xl font-bold text-slate-900">{pct(result.positive_probability)}</Text>
         <RiskGauge
           probability={result.positive_probability}
           threshold={result.operating_threshold}

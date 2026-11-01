@@ -33,7 +33,6 @@ export default function History() {
 
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-3 p-5 pb-10">
-      <Text className="text-sm text-slate-600">Stored only on this device. Nothing is kept on the server.</Text>
       {entries?.length === 0 ? <Text className="py-10 text-center text-slate-400">No saved analyses yet.</Text> : null}
       {entries?.map((e) => (
         <HistoryRow key={e.id} entry={e} />
