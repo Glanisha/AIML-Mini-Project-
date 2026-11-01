@@ -48,7 +48,7 @@ render.yaml             optional Render blueprint
  capture / gallery + crop ──multipart──▶ validate (decode, EXIF, size limits)
  consent, history (device only)          quality gate  (blur, exposure, noise)
  result: triage, gauge, heatmap  ◀─JSON─ familiarity check (deep k-NN on ImageNet features)
- evidence charts, model card             5× EfficientNet-B0 → temperature scaling
+ evidence charts                         5× EfficientNet-B0 → temperature scaling
  PDF export (share sheet)                referral threshold + abstention → triage + CAM
 ```
 

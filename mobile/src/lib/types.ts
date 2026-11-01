@@ -114,15 +114,3 @@ export interface MetricsResponse {
   cpu_latency_ms: number | null;
   notes: string[];
 }
-
-export interface ModelCard {
-  version: string;
-  created: string;
-  architecture: string;
-  classes: string[];
-  ensemble_size: number;
-  calibration: { method: string; temperature: number };
-  decision: { operating_threshold: number; target_sensitivity: number; abstain_margin: number };
-  ood: { method: string; threshold: number };
-  training_data: string;
-}

@@ -58,14 +58,7 @@ export default function Home() {
           </View>
         ) : null}
 
-        <View className="flex-row gap-3">
-          <View className="flex-1">
-            <Button title="Model evidence" variant="ghost" onPress={() => router.push('/evidence')} />
-          </View>
-          <View className="flex-1">
-            <Button title="About" variant="ghost" onPress={() => router.push('/about')} />
-          </View>
-        </View>
+        <Button title="Model evidence" variant="ghost" onPress={() => router.push('/evidence')} />
 
         <View className="gap-2">
           <ServerStatus />

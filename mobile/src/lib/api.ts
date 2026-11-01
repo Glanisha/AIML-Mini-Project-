@@ -3,7 +3,7 @@ import { File } from 'expo-file-system';
 import { fetch } from 'expo/fetch';
 import { Platform } from 'react-native';
 
-import type { AnalyzeResponse, HealthResponse, MetricsResponse, ModelCard, SamplesResponse } from './types';
+import type { AnalyzeResponse, HealthResponse, MetricsResponse, SamplesResponse } from './types';
 
 // Free hosts can cold-start (Render sleeps after 15 min idle), so allow a generous first request
 const REQUEST_TIMEOUT_MS = 60_000;
@@ -63,7 +63,6 @@ async function request<T>(path: string, init?: Parameters<typeof fetch>[1]): Pro
 
 export const getHealth = () => request<HealthResponse>('/health');
 export const getMetrics = () => request<MetricsResponse>('/metrics');
-export const getModelCard = () => request<ModelCard>('/model-card');
 export const getSamples = () => request<SamplesResponse>('/samples');
 
 export const analyzeSample = (id: string) =>

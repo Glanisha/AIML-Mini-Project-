@@ -82,7 +82,7 @@ Everything after validation is in `backend/app/inference/` and uses only NumPy, 
 
   Thresholds are percentiles of the *training* images. For example, an image is rejected if its sharpness is below half the 1st percentile. Noise estimation was added after the first evaluation showed that additive noise *inflates* the sharpness score and slipped past the blur check (§4.6).
 
-- **Familiarity (OOD) check.** This uses deep k-nearest-neighbour detection (Sun et al., 2022): cosine distance from the L2-normalised frozen ImageNet embedding to its 5th-nearest development image. The threshold is the 99th percentile of held-out-fold distances. *Disclosure:* the first version used Mahalanobis distance in a 32-dimensional PCA subspace. It caught only 0.5% of non-oral photos, because PCA throws away exactly the directions in which out-of-distribution images differ. We compared alternatives using the OOD proxy sets (which makes those sets no longer fully independent), and k-NN detected 100% while flagging 0% of genuine test lesions.
+- **Familiarity (OOD) check.** This uses deep k-nearest-neighbour detection (Sun et al., 2022): cosine distance from the L2-normalised frozen ImageNet embedding to its 5th-nearest development image. The threshold (0.522) is the 99th percentile of held-out-fold distances. *Disclosure:* the first version used Mahalanobis distance in a 32-dimensional PCA subspace. It caught only 0.5% of non-oral photos, because PCA throws away exactly the directions in which out-of-distribution images differ. We compared alternatives using the OOD proxy sets (which makes those sets no longer fully independent), and k-NN detected 100% while flagging 0% of genuine test lesions.
 - **Explanation.** With a global-average-pool and linear head, Grad-CAM on the last convolutional block reduces exactly to class activation mapping (Zhou et al., 2016). We therefore compute the map *inside* the ONNX graph, with no autograd at serving time. The maps are averaged across ensemble members after per-member normalisation.
 
 ### 3.5 Evaluation
@@ -187,8 +187,7 @@ Heatmaps show model attention, not verified lesion boundaries.
 - **Other screens:**
   - held-out **sample cases**, including a known error and a degraded photo,
   - on-device-only history,
-  - an **evidence** screen that charts the saved test results (ROC, calibration, risk–coverage, decision curve, robustness),
-  - a model card.
+  - an **evidence** screen that charts the saved test results (ROC, calibration, risk–coverage, decision curve, robustness).
 - **Backend:** FastAPI on ONNX Runtime with no PyTorch dependency, packaged in a Docker image for free hosting (Hugging Face Spaces or Render). Images are processed in memory and never stored. The app has no accounts and no analytics.
 
 ## 6. Limitations
@@ -263,44 +262,11 @@ Heatmaps show model attention, not verified lesion boundaries.
 - Populations or imaging devices that differ substantially from the training data, unless re-validated.
 - Any use that would delay a clinical examination.
 
-### Decision logic
+### Details
 
-| Step | Rule |
+| | |
 | --- | --- |
-| Quality gate | Reject or warn on blur, under- or over-exposure, clipping, or noise, using percentile thresholds from the training images |
-| Familiarity | Cosine distance to the 5th-nearest training embedding > 0.522 → "photo not recognised" |
-| Score | Mean of the five members' temperature-scaled (T = 1.25) P(malignant) |
-| Referral | Score ≥ 0.276 (chosen on cross-validation for ≥ 90% sensitivity) |
-| Abstain | Score within ±0.114 of 0.276, fewer than 60% of members agree, quality rejected, or unfamiliar image |
-
-### Performance (locked test set, n = 65; 95% bootstrap CIs)
-
-| Metric | Value |
-| --- | --- |
-| ROC-AUC | 0.939 (0.875–0.991) |
-| Sensitivity | 93.8% (84.4–100) |
-| Specificity | 78.8% (63.6–90.9) |
-| NPV / PPV | 92.9% / 81.1% |
-| Coverage, and accuracy on answered cases | 82% and 92.5% (sensitivity 96.2%, specificity 88.9%) |
-| ECE / Brier | 0.132 / 0.118 |
-| OOD rejection, non-oral photos / synthetic / genuine lesions | 100% / 100% / 0% |
-| CPU latency (2 threads) | about 80 ms, including the heatmap |
-
-Full results and robustness are in §4, with figures in `ml/reports/`.
-
-### Training data
-
-- 323 original images (165 benign, 158 malignant) from hospitals in Karnataka, India, taken with mobile and intra-oral cameras.
-- The provided augmented copies were excluded.
-- There are no patient IDs; 2 near-duplicate pairs were grouped.
-- No demographic or clinical metadata is available.
-
-### Ethical considerations and caveats
-
-- **Optimistic estimates are possible:** there's no patient-level split, the source is a single region, there's no external validation, and the test set is small.
-- **PPV is overstated:** the dataset is about 50% malignant, so real-world PPV would be much lower.
-- **Fairness is unassessed:** no subgroup analysis was possible.
-- **Calibration:** scores are somewhat under-confident in the 0.3–0.7 range.
-- **Heatmaps** show model attention, not lesion boundaries.
-- **Uncertain cases** are framed as "get it checked", never as reassurance. Benign-like results always carry the advice to examine any lesion that persists for more than two weeks.
-- **Privacy:** images are not stored server-side.
+| Training data | §2 |
+| Decision logic | §3.3 and §3.4 |
+| Performance | §4 |
+| Limitations and ethics | §6 and §7 |
